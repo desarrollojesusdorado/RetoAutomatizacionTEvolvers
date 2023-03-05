@@ -1,0 +1,106 @@
+
+plugins {
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.4.2"
+    id 'java'
+}
+
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    slf4jVersion = '1.7.7'
+    serenityCoreVersion = '3.5.1'
+    junitVersion = '5.9.2'
+    assertJVersion = '3.23.1'
+    lombokVersion = '1.18.24'
+    logbackVersion = '1.2.11'
+}
+
+dependencies {
+    implementation "junit:junit:4.13.1"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityCoreVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            "org.projectlombok:lombok:${lombokVersion}",
+            "ch.qos.logback:logback-classic:${logbackVersion}"
+
+
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
+
+serenity {
+    reports = ["single-page-html"]
+
+    // // Specify the root package of any JUnit acceptance tests
+    testRoot="starter"
+}
+
+test.finalizedBy(aggregate)
+
+
+/*apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+group 'co.com.serviciovidagrupo.screenplay'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.89")
+    }
+}
+ext{
+    serenityVersion = '2.0.90'
+    serenityCucumberVersion = '1.9.49'
+}
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.18'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.assertj:assertj-core:3.12.2'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.29'
+    testImplementation 'org.projectlombok:lombok:1.18.20'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.11.2'
+    implementation 'org.json:json:20210307'
+    testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate)*/
