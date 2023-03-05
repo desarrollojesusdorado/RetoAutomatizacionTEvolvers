@@ -43,7 +43,6 @@ los proyectos.
 * [Ejecutando las pruebas](#ejecutando-las-pruebas)
 * [Buenas Practicas](#buenas-practicas)
 * [Construido con️](#construido-con)
-* [Versionado](#versionado)
 * [Autores](#autores)
 
 
@@ -64,7 +63,7 @@ Para realizar la clonación del proyecto es importante considerar los siguientes
 
 ```
 - Crear una carpeta donde quieras almacenar el proyecto.
-- Abrir la consola Git Bash y ejecutar el siguiente comando: "git clone http://inboggit01.suramericana.com.co:8080/gitbucket/git/AutomatizacionDeProcesos/PruebasFuncionalesVidaGrupo.git"
+- Abrir la consola Git Bash y ejecutar el siguiente comando: "git clone https://github.com/desarrollojesusdorado/RetoAutomatizacionTEvolvers.git"
 - Abrir el IDE ya sea Intellij ó Eclipse y realizar la importación del proyecto.
 ```
 ## Arquitectura del proyecto
@@ -169,10 +168,6 @@ _Las tecnologias o herramientas usadas para la construccion del proyecto son:_
 * [Junit](https://cucumber.io/docs/cucumber/api/#running-cucumber) - Usamos Junit para ejecutar nuestros escenarios en gherkin.
 * [Git](https://git-scm.com/docs/gittutorial) - Esta es nuestra herramienta de versionamiento para el codigo generado.
 * [Serenity Screenplay Rest](https://serenity-bdd.github.io/docs/screenplay/screenplay_rest) - Esta es nuestra herramienta para la automatización de nuestros servicios.
-
-## Versionado
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
 
 ## Autores
 
