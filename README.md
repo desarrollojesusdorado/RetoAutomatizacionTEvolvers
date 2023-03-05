@@ -29,7 +29,7 @@ Se utilizará la siguiente url:
 Realizar los escenarios y validaciones que considere, sin embargo, se debe validar que la
 suma total de los productos escogidos sea correcta.
 
-###Condiciones de entrega:
+### Condiciones de entrega:
 • Se deben entregar el proyecto en un repositorio público de github.
 • Por favor solo versionar los archivos necesarios.
 • Indicar el stack tecnológico utilizado. Generar un readme con la explicación de como ejecutar
