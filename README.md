@@ -1,6 +1,6 @@
 # RETO AUTOMATIZACION T-EVOLVERS
 
-###API AUTOMATION TESTING:
+### API AUTOMATION TESTING:
 El reto consistirá en automatizar un api para los siguientes end points o paths:
 1. CreateBooking.
 2. GetBooking.
@@ -20,7 +20,7 @@ response del endpoint CreateToken.
 
 Realizar los escenarios y validaciones que considere relevantes.
 
-###WEB AUTOMATION TESTING:
+### WEB AUTOMATION TESTING:
 El reto consistirá en automatizar la búsqueda y agregado de productos de una tienda virtual.
 Seleccionar varios productos y comprarlos. Nota: No es necesario agregar el registro del
 usuario en la automatización.
